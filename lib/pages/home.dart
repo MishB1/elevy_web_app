@@ -1,8 +1,8 @@
 import 'package:elevy_web_app/pages/containers/container1.dart';
-import 'package:elevy_web_app/utils/colors.dart';
+import 'package:elevy_web_app/utils/helpers/colors.dart';
 import '../widgets/navBar.dart';
 import 'package:flutter/material.dart';
-import '../utils/constants.dart';
+import '../utils/helpers/constants.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
