@@ -37,10 +37,15 @@ class _Container1State extends State<Container1> {
 
   //Function to calculate the levy charge
   void calculateLevy() {
-    double previousAmount =
-        double.tryParse(_previousAmountController.text) ?? 0;
+    double previousAmount = 0.0;
     double currentAmount = double.tryParse(_currentAmountController.text) ?? 0;
 
+    // Check if the previousAmountController has a valid numeric value
+    if (_previousAmountController.text.isNotEmpty) {
+      previousAmount = double.tryParse(_previousAmountController.text) ?? 0;
+    }
+
+    //Calculate Levy based on specifications
     if (previousAmount == 100) {
       // Calculate 1% levy on the current amount if previous amount is 100
       _levyCharge = currentAmount * 0.01;
@@ -186,7 +191,7 @@ class _Container1State extends State<Container1> {
                       width: 1.0),
                   color: Colors.black12,
                   borderRadius: BorderRadius.circular(10)),
-              child:  IntrinsicHeight(
+              child: IntrinsicHeight(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -198,7 +203,7 @@ class _Container1State extends State<Container1> {
                         const SizedBox(
                           height: 10,
                         ),
-                         Text(
+                        Text(
                           _amountToBePayed.toStringAsFixed(2),
                           style: const TextStyle(fontSize: 35),
                         )
