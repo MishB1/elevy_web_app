@@ -16,7 +16,7 @@ class _Container1State extends State<Container1> {
   final TextEditingController _currentAmountController =
       TextEditingController();
   double _levyCharge = 0.0;
-  double _amountToBePayed = 0.00;
+  double _amountToBePayed = 0.0;
   //int currentAmount = 7890;
 
   @override
@@ -30,8 +30,8 @@ class _Container1State extends State<Container1> {
   @override
   void dispose() {
     // Dispose of the controllers when they are no longer needed
-    _previousAmountController.dispose();
     _currentAmountController.dispose();
+    _previousAmountController.dispose();
     super.dispose();
   }
 
@@ -75,7 +75,7 @@ class _Container1State extends State<Container1> {
     return Container(
       margin: const EdgeInsets.all(35),
       width: w! / 1.5,
-      height: 450,
+      height: h! / 1.3,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25),
         color: Colors.white,
@@ -138,22 +138,20 @@ class _Container1State extends State<Container1> {
                   width: 12,
                 ),
                 Expanded(
-                  child: GestureDetector(
-                    child: TextField(
-                      /**       Amount you want to send Textfield     */
-                      keyboardType: TextInputType.number,
-                      inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                      controller: _currentAmountController,
-                      decoration: InputDecoration(
-                          border: const OutlineInputBorder(),
-                          suffixIcon: IconButton(
-                              onPressed: () {
-                                _currentAmountController.clear();
-                              },
-                              icon: const Icon(Icons.clear)),
-                          hintText: 'Eg. 70 GHS',
-                          labelText: 'Amount you want to send(GHS)'),
-                    ),
+                  child: TextField(
+                    /**       Amount you want to send Textfield     */
+                    keyboardType: TextInputType.number,
+                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                    controller: _currentAmountController,
+                    decoration: InputDecoration(
+                        border: const OutlineInputBorder(),
+                        suffixIcon: IconButton(
+                            onPressed: () {
+                              _currentAmountController.clear();
+                            },
+                            icon: const Icon(Icons.clear)),
+                        hintText: 'Eg. 70 GHS',
+                        labelText: 'Amount you want to send(GHS)'),
                   ),
                 ),
               ],

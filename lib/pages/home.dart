@@ -14,32 +14,26 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
-
     w = MediaQuery.of(context).size.width;
     h = MediaQuery.of(context).size.height;
 
-    return Container(
-      decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                  AppColors.primary, AppColors.secondary
-                ],
-                begin:Alignment.topLeft,
-                end: Alignment.bottomRight 
-                )
-              ),
-      child: const Scaffold(
-        backgroundColor: Colors.transparent,
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              NavBar(),
-              Container1()
-            ],
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      body: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                colors: [AppColors.primary, AppColors.secondary],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight)),
+        child: const Scaffold(
+          backgroundColor: Colors.transparent,
+          body: SingleChildScrollView(
+            child: Column(
+              children: [NavBar(), Container1()],
+            ),
           ),
         ),
       ),
-      
     );
   }
 }
