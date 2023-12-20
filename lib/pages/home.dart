@@ -1,4 +1,4 @@
-import 'package:elevy_web_app/pages/containers/container1.dart';
+import 'package:elevy_web_app/pages/containers/desktopContainer.dart';
 import 'package:elevy_web_app/utils/helpers/colors.dart';
 import '../widgets/navBar.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +18,6 @@ class _HomepageState extends State<Homepage> {
     h = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       body: Container(
         decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -29,7 +28,7 @@ class _HomepageState extends State<Homepage> {
           backgroundColor: Colors.transparent,
           body: SingleChildScrollView(
             child: Column(
-              children: [NavBar(), Container1()],
+              children: [NavBar(), DesktopContainer()],
             ),
           ),
         ),

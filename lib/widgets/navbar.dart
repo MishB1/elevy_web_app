@@ -1,4 +1,4 @@
-import 'package:elevy_web_app/utils/helpers/colors.dart';
+import 'package:elevy_web_app/pages/about.dart';
 import 'package:elevy_web_app/utils/helpers/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -47,10 +47,12 @@ class _NavBarState extends State<NavBar> {
             height: 50,
             child: ElevatedButton(
                 style: borderedButtonStyle,
-                onPressed: () {},
-                child: Text(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const AboutPage()));
+                },
+                child: const Text(
                   'About Us',
-                  style: TextStyle(color: AppColors.primary),
+                  style: TextStyle(color: Colors.black87),
                 )),
           )
         ],
