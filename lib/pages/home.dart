@@ -28,7 +28,7 @@ class _HomepageState extends State<Homepage> {
           backgroundColor: Colors.transparent,
           body: SingleChildScrollView(
             child: Column(
-              children: [NavBar(), DesktopContainer()],
+              children: [NavBar(), DesktopContainer(), ],
             ),
           ),
         ),

@@ -28,19 +28,20 @@ class _NavBarState extends State<NavBar> {
   Widget tabletNavBar() {
     
   }*/
-
+  
   Widget desktopNavBar() {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
-      height: 70,
+      height: 65,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           navLogo(),
           Row(
             children: [
-              navButton('Charges Calculator'),
-              navButton('Currency Converter')
+              networkLogosContainer(['momo.png', 'vodaCash.png', 'airteltigo.png']),
+              //navButton('Charges Calculator'),
+             // navButton('Currency Converter')
             ],
           ),
           SizedBox(
@@ -48,7 +49,8 @@ class _NavBarState extends State<NavBar> {
             child: ElevatedButton(
                 style: borderedButtonStyle,
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const AboutPage()));
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const AboutPage()));
                 },
                 child: const Text(
                   'About Us',
@@ -68,9 +70,29 @@ class _NavBarState extends State<NavBar> {
     );
   }
 
+  Widget networkLogosContainer(List<String> logoPaths) {
+  return Row(
+    children: logoPaths.map((path) {
+      return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Container(
+          width: 100,
+          height: 100,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/images/$path'),
+            ),
+          ),
+        ),
+      );
+    }).toList(),
+  );
+}
+
+
   Widget navButton(String text) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 10),
+      margin: const EdgeInsets.symmetric(horizontal: 20),
       child: TextButton(
           onPressed: () {},
           child: Text(
