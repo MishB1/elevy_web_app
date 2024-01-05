@@ -28,7 +28,7 @@ class _NavBarState extends State<NavBar> {
   Widget tabletNavBar() {
     
   }*/
-  
+
   Widget desktopNavBar() {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -39,9 +39,8 @@ class _NavBarState extends State<NavBar> {
           navLogo(),
           Row(
             children: [
-              networkLogosContainer(['momo.png', 'vodaCash.png', 'airteltigo.png']),
-              //navButton('Charges Calculator'),
-             // navButton('Currency Converter')
+              networkLogosContainer(
+                  ['momo.png', 'vodaCash.png', 'airteltigo.png']),
             ],
           ),
           SizedBox(
@@ -62,7 +61,7 @@ class _NavBarState extends State<NavBar> {
     );
   }
 
-  Widget navLogo() {
+  W navLogo() {
     return Container(
       width: 100,
       decoration:
@@ -71,34 +70,21 @@ class _NavBarState extends State<NavBar> {
   }
 
   Widget networkLogosContainer(List<String> logoPaths) {
-  return Row(
-    children: logoPaths.map((path) {
-      return Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Container(
-          width: 100,
-          height: 100,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/images/$path'),
+    return Row(
+      children: logoPaths.map((path) {
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Container(
+            width: 100,
+            height: 100,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/images/$path'),
+              ),
             ),
           ),
-        ),
-      );
-    }).toList(),
-  );
-}
-
-
-  Widget navButton(String text) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20),
-      child: TextButton(
-          onPressed: () {},
-          child: Text(
-            text,
-            style: const TextStyle(color: Colors.white, fontSize: 20),
-          )),
+        );
+      }).toList(),
     );
   }
 }

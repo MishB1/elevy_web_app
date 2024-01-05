@@ -73,7 +73,7 @@ class _DesktopContainerState extends State<DesktopContainer> {
 
   Widget desktopContainer() {
     return Container(
-      margin: const EdgeInsets.all(35),
+      margin: const EdgeInsets.all(20),
       width: w! / 1.5,
       height: h! / 1.3,
       decoration: BoxDecoration(
