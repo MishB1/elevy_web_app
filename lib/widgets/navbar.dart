@@ -44,7 +44,7 @@ class _NavBarState extends State<NavBar> {
             ],
           ),
           SizedBox(
-            height: 50,
+            height: 40,
             child: ElevatedButton(
                 style: borderedButtonStyle,
                 onPressed: () {
@@ -61,7 +61,7 @@ class _NavBarState extends State<NavBar> {
     );
   }
 
-  W navLogo() {
+   navLogo() {
     return Container(
       width: 100,
       decoration:

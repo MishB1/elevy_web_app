@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "962157158589",
+    "project_id": "elevy-web-app",
+    "storage_bucket": "elevy-web-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:962157158589:android:56be4e2a7348513ce117d4",
+        "android_client_info": {
+          "package_name": "com.example.elevy_web_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjl28mlbGe2_4_iaBidM31nDyB2z3AraM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

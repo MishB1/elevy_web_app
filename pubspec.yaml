@@ -18,6 +18,9 @@ dependencies:
   
   cupertino_icons: ^1.0.2
   responsive_builder: ^0.7.0
+  firebase_core: ^2.24.2
+  cloud_firestore: ^4.14.0
+  firebase_auth: ^4.16.0
 
 
 dev_dependencies:
@@ -25,7 +28,7 @@ dev_dependencies:
     sdk: flutter
 
   
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.1
 
 
 flutter:

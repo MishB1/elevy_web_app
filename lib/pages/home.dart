@@ -1,6 +1,7 @@
-import 'package:elevy_web_app/pages/containers/desktopContainer.dart';
+import 'package:elevy_web_app/pages/containers/calculator_container.dart';
 import 'package:elevy_web_app/utils/helpers/colors.dart';
 import 'package:elevy_web_app/utils/helpers/styles.dart';
+import 'package:elevy_web_app/widgets/feedback_dialog.dart';
 import '../widgets/navBar.dart';
 import 'package:flutter/material.dart';
 import '../utils/helpers/constants.dart';
@@ -31,7 +32,7 @@ class _HomepageState extends State<Homepage> {
             child: Column(
               children: [
                 const NavBar(),
-                const DesktopContainer(),
+                const CalculatorContainer(),
                 ElevatedButton(
                   style: borderedButtonStyle,
                   onPressed: () {
@@ -54,52 +55,3 @@ class _HomepageState extends State<Homepage> {
   }
 }
 
-class FeedbackDialog extends StatelessWidget {
-  const FeedbackDialog({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Dialog(
-      // Set your desired dialog properties
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            children: [
-              const Text(
-                'Feedback',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-              ),
-              const SizedBox(height: 20),
-              const Text('Did you like the app?'),
-              // Add your input fields and buttons here
-              const SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: const Text('Cancel'),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      // Handle feedback submission
-                      // You can access the entered values and perform actions
-                      Navigator.of(context).pop();
-                    },
-                    child: const Text('Submit'),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}

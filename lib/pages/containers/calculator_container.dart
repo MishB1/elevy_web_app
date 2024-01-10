@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
-class DesktopContainer extends StatefulWidget {
-  const DesktopContainer({super.key});
+class CalculatorContainer extends StatefulWidget {
+  const CalculatorContainer({super.key});
 
   @override
-  State<DesktopContainer> createState() => _DesktopContainerState();
+  State<CalculatorContainer> createState() => _DesktopContainerState();
 }
 
-class _DesktopContainerState extends State<DesktopContainer> {
+class _DesktopContainerState extends State<CalculatorContainer> {
   final TextEditingController _previousAmountController =
       TextEditingController();
   final TextEditingController _currentAmountController =
