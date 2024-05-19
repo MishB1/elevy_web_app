@@ -37,8 +37,7 @@ class _FeedbackDialogState extends State<FeedbackDialog> {
                 const SizedBox(height: 5),
                 // Add my icon
                 feedbackSubmitted
-                    ? Image.asset(successIcon,
-                        width: 100, height: 100) 
+                    ? Image.asset(successIcon, width: 100, height: 100)
                     : const SizedBox(), // Empty container if not showing icon
                 const SizedBox(height: 20),
                 Text(
@@ -46,19 +45,17 @@ class _FeedbackDialogState extends State<FeedbackDialog> {
                       ? 'We appreciate your feedback!'
                       : 'Did you like the app?',
                   style: feedbackSubmitted
-                      ? const TextStyle(
-                          fontSize: 30,
-                          color: Colors.green) 
-                      : const TextStyle(
-                          fontSize: 15), 
+                      ? const TextStyle(fontSize: 30, color: Colors.green)
+                      : const TextStyle(fontSize: 15),
                 ),
                 const SizedBox(height: 10),
                 feedbackSubmitted
-                    ? const Text('Have a nice day.', style: TextStyle(fontSize: 20),)
+                    ? const Text(
+                        'Have a nice day.',
+                        style: TextStyle(fontSize: 20),
+                      )
                     : const SizedBox(), // Empty container if not showing icon
-                
-                
-                
+
                 feedbackSubmitted
                     ? Container()
                     : SizedBox(

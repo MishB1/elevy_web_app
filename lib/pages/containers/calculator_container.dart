@@ -77,7 +77,7 @@ class _DesktopContainerState extends State<CalculatorContainer> {
       width: w! / 1.5,
       height: h! / 1.3,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(25),
+        borderRadius: BorderRadius.circular(20),
         color: Colors.white,
       ),
 
@@ -162,8 +162,8 @@ class _DesktopContainerState extends State<CalculatorContainer> {
             height: 20,
           ),
           const Divider(
-            indent: 45,
-            endIndent: 45,
+            indent: 50,
+            endIndent: 50,
           ),
           const SizedBox(
             height: 15,
@@ -187,7 +187,7 @@ class _DesktopContainerState extends State<CalculatorContainer> {
                   border: Border.all(
                       color: const Color.fromARGB(255, 244, 111, 54),
                       width: 1.0),
-                  color: Colors.black12,
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(10)),
               child: IntrinsicHeight(
                 child: Row(
