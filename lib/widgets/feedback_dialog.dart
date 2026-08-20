@@ -1,16 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:elevy_web_app/utils/helpers/constants.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 class FeedbackDialog extends StatefulWidget {
   const FeedbackDialog({super.key});
 
   @override
-  FeedbackDialogState createState() => FeedbackDialogState();
+  _FeedbackDialogState createState() => _FeedbackDialogState();
 }
 
-class FeedbackDialogState extends State<FeedbackDialog> {
+class _FeedbackDialogState extends State<FeedbackDialog> {
   final TextEditingController _commentController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   bool feedbackSubmitted = false;
@@ -128,16 +127,8 @@ class FeedbackDialogState extends State<FeedbackDialog> {
                             return;
                           }
 
-                          // Store feedback in Firestore only when Firebase is initialized.
+                          // Store feedback in Firestore
                           try {
-                            if (Firebase.apps.isEmpty) {
-                              setState(() {
-                                errorMessage =
-                                    'Feedback is unavailable on this platform because Firebase is not configured.';
-                              });
-                              return;
-                            }
-
                             await FirebaseFirestore.instance
                                 .collection('feedback')
                                 .add({
