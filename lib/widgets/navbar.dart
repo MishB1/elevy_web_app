@@ -15,7 +15,7 @@ class _NavBarState extends State<NavBar> {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(
-       mobile: (BuildContext context) => desktopNavBar(),
+      mobile: (BuildContext context) => desktopNavBar(),
       desktop: (BuildContext context) => desktopNavBar(),
     );
   }

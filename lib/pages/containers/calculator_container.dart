@@ -81,156 +81,158 @@ class _DesktopContainerState extends State<CalculatorContainer> {
         borderRadius: BorderRadius.circular(20),
         color: Colors.white,
       ),
-
+    
       /*******************    Main Calculator Area     **************/
-
+    
       // Page Header
-      child: Column(
-        children: [
-          const SizedBox(
-            height: 5,
-          ),
-
-          const Text(
-            'E-levy Charges Calculator',
-            style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 35,
-                color: Colors.black87),
-          ),
-
-          //Page description
-          const SizedBox(
-            height: 5,
-          ),
-          const Text(
-            'Use the tool below to calculate the E-Levy charge when sending money across all networks.',
-            style: TextStyle(fontSize: 16),
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-
-          // TextFields
-
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Expanded(
-                  child: TextField(
-                    /**       Amount already semt textfield     */
-                    keyboardType: TextInputType.number,
-                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                    controller: _previousAmountController,
-                    decoration: InputDecoration(
-                        border: const OutlineInputBorder(),
-                        suffixIcon: IconButton(
-                            onPressed: () {
-                              _previousAmountController.clear();
-                            },
-                            icon: const Icon(Icons.clear)),
-                        hintText: 'Eg. 120 GHS',
-                        labelText: 'Total amount already sent today(GHS)'),
-                  ),
-                ),
-                const SizedBox(
-                  width: 12,
-                ),
-                Expanded(
-                  child: TextField(
-                    /**       Amount you want to send Textfield     */
-                    keyboardType: TextInputType.number,
-                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                    controller: _currentAmountController,
-                    decoration: InputDecoration(
-                        border: const OutlineInputBorder(),
-                        suffixIcon: IconButton(
-                            onPressed: () {
-                              _currentAmountController.clear();
-                            },
-                            icon: const Icon(Icons.clear)),
-                        hintText: 'Eg. 70 GHS',
-                        labelText: 'Amount you want to send(GHS)'),
-                  ),
-                ),
-              ],
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 5,
             ),
-          ),
-
-          const SizedBox(
-            height: 20,
-          ),
-          const Divider(
-            indent: 50,
-            endIndent: 50,
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-
-          const Text('E-levy Charge', style: TextStyle(fontSize: 15)),
-
-          /**       Elevy Charges Displayer     */
-          Text(_levyCharge.toStringAsFixed(2),
-              style: const TextStyle(
-                  fontSize: 50, color: Color.fromARGB(255, 244, 111, 54))),
-
-          const SizedBox(
-            height: 15,
-          ),
-
-          Container(
-              height: h! / 4.8,
-              width: w! / 1.7,
-              decoration: BoxDecoration(
-                  border: Border.all(
-                      color: const Color.fromARGB(255, 244, 111, 54),
-                      width: 1.0),
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10)),
-              child: IntrinsicHeight(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Column(
-                      /**       Total amount paid Section     */
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text('Total amount to be paid'),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          _amountToBePayed.toStringAsFixed(2),
-                          style: const TextStyle(fontSize: 35),
-                        )
-                      ],
+            
+            const Text(
+              'E-levy Charges Calculator',
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 35,
+                  color: Colors.black87),
+            ),
+            
+            //Page description
+            const SizedBox(
+              height: 5,
+            ),
+            const Text(
+              'Use the tool below to calculate the E-Levy charge when sending money across all networks.',
+              style: TextStyle(fontSize: 16),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            
+            // TextFields
+            
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 50.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Expanded(
+                    child: TextField(
+                      /**       Amount already semt textfield     */
+                      keyboardType: TextInputType.number,
+                      inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                      controller: _previousAmountController,
+                      decoration: InputDecoration(
+                          border: const OutlineInputBorder(),
+                          suffixIcon: IconButton(
+                              onPressed: () {
+                                _previousAmountController.clear();
+                              },
+                              icon: const Icon(Icons.clear)),
+                          hintText: 'Eg. 120 GHS',
+                          labelText: 'Total amount already sent today(GHS)'),
                     ),
-                    const VerticalDivider(
-                      color: Colors.black87,
-                      indent: 10,
-                      endIndent: 10,
+                  ),
+                  const SizedBox(
+                    width: 12,
+                  ),
+                  Expanded(
+                    child: TextField(
+                      /**       Amount you want to send Textfield     */
+                      keyboardType: TextInputType.number,
+                      inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                      controller: _currentAmountController,
+                      decoration: InputDecoration(
+                          border: const OutlineInputBorder(),
+                          suffixIcon: IconButton(
+                              onPressed: () {
+                                _currentAmountController.clear();
+                              },
+                              icon: const Icon(Icons.clear)),
+                          hintText: 'Eg. 70 GHS',
+                          labelText: 'Amount you want to send(GHS)'),
                     ),
-                    const Column(
-                      /**       Rate first Section     */
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text('Rate(first 100 GHS Exempt)'),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          '1.0%',
-                          style: TextStyle(fontSize: 35),
-                        )
-                      ],
-                    ),
-                  ],
-                ),
-              ))
-        ],
+                  ),
+                ],
+              ),
+            ),
+            
+            const SizedBox(
+              height: 20,
+            ),
+            const Divider(
+              indent: 50,
+              endIndent: 50,
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            
+            const Text('E-levy Charge', style: TextStyle(fontSize: 15)),
+            
+            /**       Elevy Charges Displayer     */
+            Text(_levyCharge.toStringAsFixed(2),
+                style: const TextStyle(
+                    fontSize: 50, color: Color.fromARGB(255, 244, 111, 54))),
+            
+            const SizedBox(
+              height: 15,
+            ),
+            
+            Container(
+                height: h! / 4.8,
+                width: w! / 1.7,
+                decoration: BoxDecoration(
+                    border: Border.all(
+                        color: const Color.fromARGB(255, 244, 111, 54),
+                        width: 1.0),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10)),
+                child: IntrinsicHeight(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Column(
+                        /**       Total amount paid Section     */
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text('Total amount to be paid'),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            _amountToBePayed.toStringAsFixed(2),
+                            style: const TextStyle(fontSize: 35),
+                          )
+                        ],
+                      ),
+                      const VerticalDivider(
+                        color: Colors.black87,
+                        indent: 10,
+                        endIndent: 10,
+                      ),
+                      const Column(
+                        /**       Rate first Section     */
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('Rate(first 100 GHS Exempt)'),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            '1.0%',
+                            style: TextStyle(fontSize: 35),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                ))
+          ],
+        ),
       ),
     );
   }
