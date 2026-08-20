@@ -67,7 +67,8 @@ class _DesktopContainerState extends State<CalculatorContainer> {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(
-      desktop: (BuildContext context) => desktopContainer(),
+     mobile: (BuildContext context) => desktopContainer(),
+    desktop: (BuildContext context) => desktopContainer(),
     );
   }
 
