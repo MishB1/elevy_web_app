@@ -64,7 +64,8 @@ class _NavBarState extends State<NavBar> {
     return Container(
       width: 100,
       decoration:
-          const BoxDecoration(image: DecorationImage(image: AssetImage(logo))),
+          const BoxDecoration(image: DecorationImage(image: AssetImage(mishbLabsLogo
+          ))),
     );
   }
 
